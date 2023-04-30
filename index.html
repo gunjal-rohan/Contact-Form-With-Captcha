@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <script src="captcha.js"></script>
+
+  <style>
+    form {
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body onload="generate()">
+  <div class="container">
+    <div class="row justify-content-center m-auto shadow rounded-4 p-4 bg-info mt-3 py-3 col-md-16">
+
+      <div class="col-sm-6 shadow bg-white rounded-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/M%C3%BCnster%2C_LVM%2C_B%C3%BCrogeb%C3%A4ude_--_2013_--_5149-51.jpg/1200px-M%C3%BCnster%2C_LVM%2C_B%C3%BCrogeb%C3%A4ude_--_2013_--_5149-51.jpg" style="padding-right: 5px; padding-top: 15px; width:500px;height:200px" alt="My Company">
+        <br>
+        <h3>My Company</h3>
+        <br>
+        <p><strong>Address :</strong> My Company, North Los Robles Avenue, Pasedina California, United states.</p>
+        <p><strong>Contact Number :</strong> 123456789</p>
+        <p><strong>Mail :</strong> mail@example.com</p>
+      </div>
+      <div class="col-sm-6 shadow bg-white rounded-4">
+       
+        <form class="row justify-content-center m-auto  rounded-4 p-4 bg-white mt-3 py-3 col-md-16" action="">
+          <label for="name">Name :</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name ">
+          <label for="mail">E-mail Id :</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com">
+          <label for="phone">Contact Number :</label>
+          <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{10}">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" placeholder="Enter your address">
+          <label for="message">Message : </label>
+          <textarea name="message" id="message" cols="20" rows="2" placeholder="Enter your meessage here"></textarea>
+          <div class="parent">
+            <div id="user-input" class="child">
+              <input type="text" id="submit" placeholder="Captcha code" />
+            </div>
+
+            <div onclick="generate()" class="child">
+              <i class="fas fa-sync"></i>
+            </div>
+
+            <div id="image" selectable="False" class="child">
+            </div>
+          </div>
+          <input class="btn btn-primary btn-sm mt-3" type="submit" id="btn" onclick="printmsg()" />
+
+          <p id="key"></p>
+
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
